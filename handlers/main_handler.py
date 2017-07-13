@@ -17,7 +17,7 @@ class MainHandler(webapp2.RequestHandler):
         
 
         html_params = {
-            "title": "Main Title",
+            "title": "Hampton HangOuts",
             "content": "Hello"
             "html_login_url": students.create_login_url("/")
         }
