@@ -1,1 +1,16 @@
-<h1> this is a form</h1>
+<h1> Hear from our students! </h1>
+
+<a href="{{html_login_url}}">Login</a>
+ {{html_get_current_user}}
+ {{html_comments}}
+
+
+<form method="POST">
+ 	Your name:<input name="form_author">
+ 	<br>
+ 	<textarea name="form_comment">
+ 		Your comment here...
+ 	</textarea>
+ 	<br/>
+ 	<input type="submit">
+ </form>
