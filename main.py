@@ -3,11 +3,11 @@ import webapp2
 
 from handlers import jinja_env
 from handlers import main_handler
-from handlers import second_handler
+from handlers import form_handler
 
 jinja_env.init(os.path.dirname(__file__))
 
 app = webapp2.WSGIApplication([
     ('/', main_handler.MainHandler),
-    ('/second', second_handler.SecondHandler),
+    ('/second', form_handler.FormHandler),
 ], debug=True)

@@ -5,7 +5,7 @@ import webapp2
 
 from models import book
 
-class SecondHandler(webapp2.RequestHandler):
+class FormHandler(webapp2.RequestHandler):
     def get(self):
     	logging.info("SecondHandler")
     	books = book.Book.query().fetch()
@@ -14,5 +14,5 @@ class SecondHandler(webapp2.RequestHandler):
             "title": "Second Title",
             "content": "Goodbye"
         }
-        template = jinja_env.env.get_template('templates/tmpl.html')
+        template = jinja_env.env.get_template('templates/form.html')
         self.response.out.write(template.render(html_params))
