@@ -1,6 +1,8 @@
 body {
 	color: white
+	
 }
+<<<<<<< HEAD
 
 body {
 	font-family:sans-serif;
@@ -14,4 +16,13 @@ h1 {
 	border:5px solid black;
 	padding:20px;
 	margin-left: 40px
+=======
+#background {
+	background-position: center;
+	height: 100%;
+}
+
+title {
+	height: 100px;
+>>>>>>> f4387ef671e96b667ca3c19bb870d5079f81ca98
 }
