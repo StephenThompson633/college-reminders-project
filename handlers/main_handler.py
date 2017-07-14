@@ -2,18 +2,20 @@
 import jinja_env
 import logging
 import webapp2
-
+import fromgoogle.appengine.
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-    	logging.info("MainHandler")
-    	logging.info(students.get_current_student())
-        logging.info(students.create_login_url("/"))
 
-        current_student= students.get_current_student()
-
-        student= students.get_current_student()
+    	student = users.get_current_user()
         if student!= None:
             html_params["html_user"]= student.email()
+    	logging.info("MainHandler")
+    	logging.info(students.get_current_user())
+        logging.info(students.create_login_url("/"))
+
+        current_student= users.get_current_user()
+
+        
         
 
         html_params = {
