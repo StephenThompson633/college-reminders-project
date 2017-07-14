@@ -12,11 +12,13 @@ from google.appengine.api import users
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-    	student = users.get_current_user()
+
+        student = users.get_current_user()
+
         if student!= None:
             html_params["html_user"]= student.email()
-    	logging.info("MainHandler")
-    	logging.info(student)
+        logging.info("MainHandler")
+        logging.info(student)
        
 
        
