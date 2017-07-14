@@ -2,14 +2,17 @@
 import jinja_env
 import logging
 import webapp2
+from google.appengine.api import users
+
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
     	logging.info("MainHandler")
-    	logging.info(students.get_current_student())
+    	logging.info(students.get_current_user())
         logging.info(students.create_login_url("/"))
 
-        current_student= students.get_current_student()
+        current_student= students.get_current_user()
 
         student= students.get_current_student()
         if student!= None:
