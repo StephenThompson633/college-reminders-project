@@ -14,7 +14,7 @@ class MainHandler(webapp2.RequestHandler):
 
         current_student= students.get_current_user()
 
-        student= students.get_current_student()
+        student= students.get_current_user()
         if student!= None:
             html_params["html_user"]= student.email()
         
