@@ -1,3 +1,17 @@
 body {
 	color: white
 }
+
+body {
+	font-family:sans-serif;
+background-color: blue;
+}
+
+#summary{
+	color: blue;
+}
+h1 {
+	border:5px solid black;
+	padding:20px;
+	margin-left: 40px
+}
