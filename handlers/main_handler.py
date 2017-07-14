@@ -18,8 +18,8 @@ class MainHandler(webapp2.RequestHandler):
 
         html_params = {
             "title": "Hampton HangOuts",
-            "content": "Hello"
-            "html_login_url": students.create_login_url("/")
+            "content": "Hello",
+            "html_login_url": students.create_login_url("/"),
         }
         template = jinja_env.env.get_template('templates/tmpl.html')
         self.response.out.write(template.render(html_params))
