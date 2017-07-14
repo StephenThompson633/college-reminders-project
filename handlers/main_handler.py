@@ -12,20 +12,17 @@ from google.appengine.api import users
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-
+#how to get loin from the user
         student = users.get_current_user()
 
         if student!= None:
             html_params["html_user"]= student.email()
         logging.info("MainHandler")
         logging.info(student)
-       
-
-       
-
-        
+    def get(self):
         
 
+       
         html_params = {
             "title": "Hampton HangOuts",
             "content": "Hello",
