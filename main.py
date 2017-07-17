@@ -15,7 +15,7 @@ jinja_env.init(os.path.dirname(__file__))
 
 app = webapp2.WSGIApplication([
     ('/', main_handler.MainHandler),
-    ('/QA', form_handler.FormHandler),
-    ('/remind', remind_handler.RemindHandler),
+    #('/QA', form_handler.FormHandler),
+    #('/remind', remind_handler.RemindHandler),
 
 ], debug=True)
