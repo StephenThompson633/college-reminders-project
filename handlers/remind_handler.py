@@ -31,6 +31,8 @@ class RemindHandler(webapp2.RequestHandler):
             content= r_contet,
             date= r_date,
             time= r_time,
+            )
+
 
 
 
