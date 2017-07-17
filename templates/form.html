@@ -2,15 +2,14 @@
 
 <a href="{{html_login_url}}">Login</a>
  {{html_get_current_user}}
- {{html_comments}}
 
 
 <form method="POST">
     Your name:<input name="form_author">
     <br>
-    <textarea name="form_comment">
-        Your comment here...
-    </textarea>
+    <textarea name="form_comment" placeholder="Your comment here"></textarea>
     <br/>
-    <input type="submit">
+    <input type="submit"
+    value="submit">
  </form>
+ {{html_comments}}
