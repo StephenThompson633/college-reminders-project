@@ -1,0 +1,14 @@
+body {
+    font-family:sans-serif;
+background-color: blue;
+}
+
+#summary{
+    color: solid white;
+}
+
+h1 {
+    border:5px solid white;
+    padding:20px;
+    margin-left: 40px
+}
