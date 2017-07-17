@@ -34,11 +34,3 @@ class RemindHandler(webapp2.RequestHandler):
 
 
 
-    def post(self):
-        logging.info("USER SAID POST")
-        r_re = self.request.get("form_re")
-
-
-            )
-        new_reminders.put()
-        self.redirect('/remind')
