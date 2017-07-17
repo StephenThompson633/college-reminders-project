@@ -1,6 +1,7 @@
 from google.appengine.ext import ndb
 
 class RemindersModel(ndb.Model):
-    author = ndb.StringProperty()
-    title = ndb.StringProperty()
-    description = ndb.StringProperty()
+    email = ndb.StringProperty()
+    content = ndb.StringProperty()
+    date = ndb.StringProperty()
+    time = ndb.StringProperty()
