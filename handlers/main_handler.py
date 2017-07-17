@@ -12,7 +12,7 @@ from google.appengine.api import users
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-#how to get loin from the user
+        #how to get login from the user
         student = users.get_current_user()
 
         if student!= None:
