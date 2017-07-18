@@ -1,1 +1,40 @@
-event.html
+
+<head>
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+<body>
+
+<div class="bg"></div>
+
+<h1> Plan your events here </h1>
+
+<p id="cal"> </p>
+<script>
+
+var d = new Date();
+document.getElementById("cal").innerHTML = d;
+
+</script>
+
+</body>
+<style>
+.bg {
+
+    background-image: url("https://www.puyallup.com/wp-content/uploads/2017/01/Events.gif");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+</head>
+
+
+</html>
