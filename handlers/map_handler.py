@@ -3,7 +3,7 @@ import logging
 import webapp2
 from google.appengine.api import users
 
-class RemindHandler(webapp2.RequestHandler):
+class MapHandler(webapp2.RequestHandler):
     def get(self):
         logging.info("MapHandler")
         html_params = {
