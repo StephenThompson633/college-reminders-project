@@ -1,1 +1,22 @@
-map.html
+<h1> Find your way through campus! </h1>
+
+
+<body>
+
+<h1>My First Google Map</h1>
+
+<div id="map">My map will go here</div>
+
+<div id="map" style="width:400px;height:400px">
+
+function myMap() {
+    var mapOptions = {
+        center: new google.maps.LatLng(51.5, -0.12),
+        zoom: 10,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    }
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+
