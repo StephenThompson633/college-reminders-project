@@ -1,5 +1,7 @@
+body {
+	color: white;
+}
 
-
-#eve {
-	background-image: url("http://s3.amazonaws.com/churchplantmedia-cms/higher_ground_church_oakland/events-banner.jpg");
+.bg {
+background-color: black;
 }
