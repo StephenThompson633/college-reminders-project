@@ -1,1 +1,58 @@
-event.html
+
+<head>
+<link rel="stylesheet" type="text/css" href="resources/event.css">
+
+<h1 id = head> Plan your events here </h1>
+
+<p id="cal"> </p>
+<script>
+
+var d = new Date();
+document.getElementById("cal").innerHTML = d;
+
+</script>
+</head>
+<body>
+
+<form method="POST">
+	<p>Event name:</p>
+	<textarea name="event" placeholder=></textarea>
+
+	<p>Date and Time:</p>
+	<input type="date" name="date"></input>
+
+	<p>Description:</p>
+	<textarea name="describe" placeholder=></textarea>
+
+	
+
+	<div>
+	<p> Whose invited? </p>
+	Everyone's invited.<input type="radio" name="invite" value="everyone"></input>
+	Invite only.<input type="radio" name="invite" value="rsvp"></input>
+	</div>
+	<input type="submit"></input>
+</form>
+
+<div class="bg"></div>
+
+
+</body>
+<style>
+.bg {
+
+	background-image: url("https://www.puyallup.com/wp-content/uploads/2017/01/Events.gif");
+
+	/* Full height */
+	height: 90%; 
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+</style>
+
+
+
+</html>

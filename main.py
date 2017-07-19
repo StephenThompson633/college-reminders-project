@@ -7,6 +7,7 @@ from handlers import main_handler
 from handlers import form_handler
 from handlers import remind_handler
 from handlers import map_handler
+from handlers import event_handler
 
 jinja_env.init(os.path.dirname(__file__))
 
@@ -19,5 +20,6 @@ app = webapp2.WSGIApplication([
     ('/QA', form_handler.FormHandler),
     ('/remind', remind_handler.RemindHandler),
     ('/map', map_handler.MapHandler),
+    ('/event', event_handler.EventHandler),
 
 ], debug=True)

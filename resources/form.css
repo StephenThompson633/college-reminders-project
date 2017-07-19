@@ -1,6 +1,6 @@
 body {
     font-family:sans-serif;
-background-color: blue;
+background-color: #000084;
 }
 
 #summary{
@@ -8,7 +8,54 @@ background-color: blue;
 }
 
 h1 {
-    border:5px solid white;
-    padding:20px;
-    margin-left: 40px
+    padding:10px;
+    margin-left: 25px;
+    top: 0px;
+    border:4px solid white;
+}
+
+
+body {
+    color: white;
+}
+
+h1 {
+    color: white;
+}
+
+#students {
+    height: 200px; 
+    width: 200px; 
+    max-width: 300px;
+    position: fixed;
+    bottom:353;
+    right: 0px;
+    width: 300px;
+}
+
+#basketball {
+    height: 240px; 
+    width: 260px; 
+    max-width: 300px;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    width: 300px;
+}
+
+#football {
+    height: 240px; 
+    width: 260px; 
+    max-width: 300px;
+    position: fixed;
+    bottom: 112;
+    right: 0px;
+    width: 300px;
+}
+
+#spirit {
+    width:1200px;
+    height: 230px;
+    max-width: :300px;
+
 }

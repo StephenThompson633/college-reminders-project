@@ -25,7 +25,9 @@ class FormHandler(webapp2.RequestHandler):
 
 
         html_params = {
-            "html_comments":(comment_str)
+            "html_comments":(comment_str),
+            "html_get_current_user":(users.get_current_user().email())
+
         }
         template = jinja_env.env.get_template('templates/form.html')
        
@@ -62,11 +64,10 @@ class FormHandler(webapp2.RequestHandler):
 
 
     def post(self):
-        r_author= self.request.get("form_author")
         r_comment=self.request.get("form_comment")
 
         new_author= comment.Comment(
-            author=r_author,
+            author=(users.get_current_user().email()),
             contents=r_comment,
             )
         new_author.put()
