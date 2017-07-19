@@ -1,19 +1,35 @@
 <title> My Reminders </title>
-<h1>My Reminders</h1>
 
 
-<link rel= "stylesheet" type="text/css" href= "resources/reminders.css">
+<link rel= "stylesheet" type="text/css" href= "/resources/reminders.css">
+
 <div id="myDIV" class="header">
-  <h2>My To Do List</h2>
-  <input type="text" id="myInput" placeholder="Title...">
-  <span onclick="newElement()" class="addBtn">Add</span>
+  
+  
 </div>
+<body>
+
 
 <ul id="myUL">
-  <li>Hit the gym</li>
-  <li class="checked">Pay bills</li>
-  <li>Meet George</li>
-  <li>Buy eggs</li>
-  <li>Read a book</li>
-  <li>Organize office</li>
+  
 </ul>
+<form method="POST">
+    <p>Enter the date of the reminder</p> <input type= "date" name="date" style="width: 300px; ">
+    <br>
+    <p>Type reminder</p> 
+    <textarea name="form_reminder" placeholder="Your reminder here" style= "width: 300px; height: 100px;"></textarea>
+    <br/>
+    <input type="submit" class="button"
+    value="submit">
+ </form>
+ <ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/QA">Form</a></li>
+  <li><a href="/remind">Reminders</a></li>
+  <li><a href="/map"></a>Map</li>
+ <ul>
+
+
+<h1>Your reminders are displayed below<h1>
+ {{html_comments}}
+ </body>
