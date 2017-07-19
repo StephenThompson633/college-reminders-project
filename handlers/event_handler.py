@@ -8,23 +8,25 @@ class EventHandler(webapp2.RequestHandler):
     def get(self):
         logging.info("EventHandler")
         html_params = {
-            "title": "My Reminders",
+            "title": "My Events",
             "content": "Hello",
             }
 
+        
+
+        user_event_query= event.EventModel.query()
+        event_list= user_event_query.fetch()
+        event_str= ""
+        for user_event in event_list:
+            event_str += "<div>"+(user_event.date)
+            event_str += "<h3>"+(user_event.event)+"</h3>"
+            event_str += "<p>"+(user_event.describe)+"</p>"
+            event_str += "<div>"+(user_event.invite)
+        html_params = {
+             "html_events": event_str,
+        }
         template = jinja_env.env.get_template('templates/event.html')
         self.response.out.write(template.render(html_params))
-
-
-        # user_event_query= event.Event.query()
-        # comment_list= user_event_query.fetch()
-        # comment_str= ""
-        # for user_event in comment_list:
-        #     comment_str +=""
-        #     comment_str+= 
-        #     comment_str += 
-        #     comment_str += 
-
 
     def post(self):
         logging.info("PostHandler")
