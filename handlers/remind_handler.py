@@ -3,6 +3,9 @@ import logging
 import webapp2
 from google.appengine.api import users
 from models import reminders
+from google.appengine.ext import ndb
+
+
 
 
 class RemindHandler(webapp2.RequestHandler):
@@ -13,13 +16,14 @@ class RemindHandler(webapp2.RequestHandler):
             "content": "Hello",
             }
             #last spot
-        users_comments_query= reminders.RemindersModel.query()
-        comments_list= users_comments_query.fetch()
+        user_reminder_query= reminders.RemindersModel.query()
+        comments_list= user_reminder_query.fetch()
         comments_str= ""
-        for users_comments in comments_list:
+        for user_reminder in comments_list:
             comments_str +="<div>"
-            comments_str+= "<h3>"+users_comments.date + "</h3>"
-            comments_str += "<p>"+ (users_comments.content) + "</p>"
+            comments_str+= "<h3>"+user_reminder.date + "</h3>"
+            comments_str += "<p>"+ (user_reminder.content) + "</p>"
+            comments_str+="<input type= 'checkbox' name= 'delete' value= '"+str(user_reminder.key.urlsafe())+"'></input>"
             comments_str += "<div>"
 
 
@@ -57,6 +61,10 @@ class RemindHandler(webapp2.RequestHandler):
     #         date= r_date,
     #         time= r_time,
     #         )
+    def post(self):
+        r_delete= self.request.get("delete")
+        r_deletekey= ndb.Key(urlsafe=r_delete)
+        r_deletekey.delete()
 
 
 

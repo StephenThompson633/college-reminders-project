@@ -39,6 +39,7 @@ body {
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
 }
 
 ul {
@@ -57,4 +58,13 @@ ul {
 li a.active {
     background-color: #4CAF50;
     color: white;
+}
+p{
+    font-family: cursive;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+    
 }
