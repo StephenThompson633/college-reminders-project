@@ -1,3 +1,14 @@
-#head {
- {border-style: solid;}
+
+body {
+	background-image: url("https://www.puyallup.com/wp-content/uploads/2017/01/Events.gif");
+	}
+h1 {
+	color: red;
+	border: 5px solid black;
+    border-width: 3px;
+    text-align: center;
+}
+#cal {
+	color: red;
+	text-align: center;
 }
