@@ -4,6 +4,9 @@ import logging
 import webapp2
 from models import comment
 from google.appengine.api import users
+import time
+
+
 
 class FormHandler(webapp2.RequestHandler):
     def get(self):
@@ -19,9 +22,13 @@ class FormHandler(webapp2.RequestHandler):
         comment_str= ""
         for user_comment in comment_list:
             comment_str +="<div>"
-            comment_str+= "<h3>"+user_comment.author + "</h3>"
+            formatedTime=user_comment.time.strftime('%I:%M%p %Z on %b %d, %Y')
+            comment_str+= "<h3>"+str(user_comment.author) + " " + str(formatedTime)+"</h3>"
             comment_str += "<p>"+ (user_comment.contents) + "</p>"
             comment_str += "<div>"
+        
+        
+
 
 
         html_params = {

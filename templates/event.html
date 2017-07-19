@@ -12,46 +12,118 @@ document.getElementById("cal").innerHTML = d;
 
 </script>
 </head>
+
+<style>
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
 <body>
 
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <a href="/remind">My Reminders</a>
+  <a href="/event">Upcoming Events</a>
+  <a href="/QA">Forums</a>
+  <a href="/map">Campus Map</a>
+
+
+
+</div>
+
+
+<div id="main">
+  <h2> </h2>
+  <p></p>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "black";
+}
+</script>
+<body>
 <form method="POST">
-	<p>Event name:</p>
-	<textarea name="event" placeholder=></textarea>
+    <p>Event name:</p>
+    <textarea name="event" placeholder=></textarea>
 
-	<p>Date and Time:</p>
-	<input type="date" name="date"></input>
+    <p>Date and Time:</p>
+    <input type="date" name="date"></input>
 
-	<p>Description:</p>
-	<textarea name="describe" placeholder=></textarea>
+    <p>Description:</p>
+    <textarea name="describe" placeholder=></textarea>
 
-	
+    
 
-	<div>
-	<p> Whose invited? </p>
-	Everyone's invited.<input type="radio" name="invite" value="everyone"></input>
-	Invite only.<input type="radio" name="invite" value="rsvp"></input>
-	</div>
-	<input type="submit"></input>
+    <div>
+    <p> Whose invited? </p>
+    Everyone's invited.<input type="radio" name="invite" value="Anyone's invited."></input>
+    Invite only.<input type="radio" name="invite" value="Invite only."></input>
+    </div>
+    <input type="submit"></input>
 </form>
 
+{{ html_events }}
 <div class="bg"></div>
-
 
 </body>
 <style>
-.bg {
-
-	background-image: url("https://www.puyallup.com/wp-content/uploads/2017/01/Events.gif");
-
-	/* Full height */
-	height: 90%; 
-
-	/* Center and scale the image nicely */
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-</style>
 
 
 
