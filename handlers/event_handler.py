@@ -24,6 +24,7 @@ class EventHandler(webapp2.RequestHandler):
             event_str += "<div>"+(user_event.invite)
         html_params = {
              "html_events": event_str,
+             "html_get_current_user": (users.get_current_user().email()),
         }
         template = jinja_env.env.get_template('templates/event.html')
         self.response.out.write(template.render(html_params))
