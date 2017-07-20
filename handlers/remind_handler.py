@@ -22,9 +22,8 @@ class RemindHandler(webapp2.RequestHandler):
         for user_reminder in comments_list:
             comments_str +="<div>"
             comments_str+= "<h3>"+user_reminder.date + "</h3>"
-            comments_str += "<p>"+ (user_reminder.content) + "</p>"
-            comments_str+="<input type= 'checkbox' name= 'delete' value= '"+str(user_reminder.key.urlsafe())+"'></input>"
-            comments_str += "<div>"
+            comments_str += "<p>"+ (user_reminder.content) + "</p>"+"<input type= 'checkbox' name= 'delete' value= '"+str(user_reminder.key.urlsafe())+"'></input>"
+            comments_str += "</div>"
 
 
         html_params = {
@@ -61,10 +60,10 @@ class RemindHandler(webapp2.RequestHandler):
     #         date= r_date,
     #         time= r_time,
     #         )
-    def post(self):
-        r_delete= self.request.get("delete")
-        r_deletekey= ndb.Key(urlsafe=r_delete)
-        r_deletekey.delete()
+  #  def post(self):
+    #    r_delete= self.request.get("delete")
+   #     r_deletekey= ndb.Key(urlsafe=r_delete)
+    #    r_deletekey.delete()
 
 
 
