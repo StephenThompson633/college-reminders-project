@@ -5,7 +5,7 @@ import webapp2
 from models import comment
 from google.appengine.api import users
 import time
-
+from datetime import timedelta
 
 
 class FormHandler(webapp2.RequestHandler):
@@ -20,8 +20,12 @@ class FormHandler(webapp2.RequestHandler):
         user_comment_query= comment.Comment.query()
         comment_list= user_comment_query.fetch()
         comment_str= ""
+
+        comment_list.sort(key=lambda comment:comment.time, reverse=True)
+
         for user_comment in comment_list:
             comment_str +="<div>"
+            user_comment.time=user_comment.time-timedelta(hours=4)
             formatedTime=user_comment.time.strftime('%I:%M%p %Z on %b %d, %Y')
             comment_str+= "<h3>"+str(user_comment.author) + " " + str(formatedTime)+"</h3>"
             comment_str += "<p>"+ (user_comment.contents) + "</p>"
@@ -91,3 +95,5 @@ class FormHandler(webapp2.RequestHandler):
         # new_comment=Comment(author="place holder", contents=r_comment)
         # new_comment.put()
         # logging
+
+        
