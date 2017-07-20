@@ -10,7 +10,7 @@ class EventHandler(webapp2.RequestHandler):
         if user == None:
             self.redirect("/")
             return
-        
+
         logging.info("EventHandler")
         html_params = {
             "title": "My Events",
