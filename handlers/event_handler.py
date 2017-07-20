@@ -6,6 +6,11 @@ from models import event
 
 class EventHandler(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
+        if user == None:
+            self.redirect("/")
+            return
+        
         logging.info("EventHandler")
         html_params = {
             "title": "My Events",
@@ -24,7 +29,10 @@ class EventHandler(webapp2.RequestHandler):
             event_str += "<div>"+(user_event.invite)
         html_params = {
              "html_events": event_str,
-             "html_get_current_user": (users.get_current_user().email()),
+             "html_get_current_user":(users.get_current_user().email()),
+             "html_login_url": users.create_login_url("/"),
+
+
         }
         template = jinja_env.env.get_template('templates/event.html')
         self.response.out.write(template.render(html_params))
