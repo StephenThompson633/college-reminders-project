@@ -12,7 +12,7 @@ document.getElementById("cal").innerHTML = d;
 
 </script>
 </head>
-<p> Hi  {{ html_get_current_user }} </p> <a href= "{{html_login_url}}">Logout</a>
+
 
 <style>
 body {
@@ -99,6 +99,7 @@ function closeNav() {
     document.body.style.backgroundColor = "black";
 }
 </script>
+<p> Hi  {{ html_get_current_user }} </p> <a href= "{{html_login_url}}">Logout</a>
 <body>
 <form method="POST">
     <p>Event name:</p>
